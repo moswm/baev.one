@@ -145,3 +145,18 @@ button, input { overflow: visible; }
 
 ul.pfl li span { border:1px solid #ccc; font-size:11px; background-color:#eee; padding:1px; margin-left:10px; }
 ul.pfl li span.lp { color:#F70C00; }
+
+#bottomheadline { max-width:700px; }
+@media screen and (max-width: 800px) {
+	#page, #header, .bpxline { width:auto; }
+}
+@media screen and (max-width: 620px) {
+	#header .tel span { font-size: 22px; }
+	.h1ul li { line-height: 1.1em; font-size: 18px; }
+	.braceright { width:170px; padding-left:20px; }
+	.vidpro iframe { width:400px; }
+	.codeexam img { width:400px; }
+}
+@media screen and (max-width: 550px) {
+	#header .tel { display: none; }
+}
