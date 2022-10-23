@@ -29,9 +29,7 @@ func main() {
 	mux443:=http.NewServeMux()
 	mux443.HandleFunc("/",hdl_443)
 	fs:=http.FileServer(http.Dir(static_path))
-	mux443.Handle("/css/",http.StripPrefix("/",fs))
-	mux443.Handle("/js/",http.StripPrefix("/",fs))
-	mux443.Handle("/img/",http.StripPrefix("/",fs))
+	mux443.Handle("/"+proj_dir+"/",http.StripPrefix("/",fs))
 	
 	mux5001:=http.NewServeMux()
 	mux5001.HandleFunc("/",hdl_5001)

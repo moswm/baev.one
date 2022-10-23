@@ -46,6 +46,7 @@ func start_index(w http.ResponseWriter, r *http.Request) {
 		hdl_redirect_home(w, r)
 	} else {
 		tpl_data := map[string]string{
+			"pfxstdir":		proj_dir,
 			"title":		title,
 			"myurl":		myurl,
 			"author":		author,
@@ -55,7 +56,6 @@ func start_index(w http.ResponseWriter, r *http.Request) {
 			"ruriGo_3":		ruriGo[3],
 			"time":			strconv.FormatInt(time.Now().Sub(time.Unix(0,0)).Nanoseconds(),10)}
 		
-		display(w, "main", tpl_data)
-		//display(w, "403", nil)
+		DispHtml(w, "main", tpl_data)
 	}
 }

@@ -25,7 +25,7 @@ import (
 func dwlFile(w http.ResponseWriter, r *http.Request) {
 	
 	if rqkeyCheck(r.URL.Query().Get("rqkey")) != true {
-		display(w, "403", nil)
+		DispHtml(w, "403", nil)
 		return
 	}
 	

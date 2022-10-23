@@ -17,16 +17,19 @@
 package main
 
 const (
-	//ssl
-	ssl_cert		= "/var/www/ssl/cert.pem"
-	ssl_key			= "/var/www/ssl/key.pem"
 	//system
-	tpl_path		= "/var/www/go/src/baev/tpl/"
-	static_path		= "/var/www/static/"
+	www_path		= "/var/www/"
+	proj_dir		= "baev"
+	rqkey_path		= www_path
+	tpl_path		= www_path+"go/src/"+proj_dir+"/tpl/"
+	static_path		= www_path+"static/"
+	//ssl
+	ssl_cert		= www_path+"ssl/cert.pem"
+	ssl_key			= www_path+"ssl/key.pem"
 	//main
-	copyright		= "1999 - 2022 Baev"
+	copyright		= "Copyright (C) 2022 Baev"
 	author			= "Baev"
-	prodname		= "AyDaka Content Management System v10.0"
+	prodname		= "baev.one"
 	myhost			= "baev.one"
 	myhostidn		= myhost
 	myurl			= "https://"+myhost+"/"

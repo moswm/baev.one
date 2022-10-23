@@ -38,6 +38,6 @@ var templates = template.Must(template.ParseFiles(
 	tpl_path+"pg/dev/calculator/form.html",
 	tpl_path+"pg/sendforms/callform.html"))
 
-func display(w http.ResponseWriter, page string, data interface{}) {
-	templates.ExecuteTemplate(w, page+".html", data)
+func DispHtml(w http.ResponseWriter, pgName string, data interface{}) {
+	templates.ExecuteTemplate(w, pgName+".html", data)
 }

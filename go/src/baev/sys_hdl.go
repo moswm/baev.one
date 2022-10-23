@@ -42,18 +42,18 @@ func hdl_5001(w http.ResponseWriter, r *http.Request) {
 }
 
 func hdl_7001(w http.ResponseWriter, r *http.Request) {
-	display(w, "403", nil)
+	DispHtml(w, "403", nil)
 }
 func hdl_7001_upload(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
-		display(w, "403", nil)
-		//disp'lay(w, "upload", nil)
+		DispHtml(w, "403", nil)
+		//DispHtml(w, "upload", nil)
 	case "POST":
 		hdl_CORS(w)
 		uplFile(w, r)
 	default:
-		display(w, "403", nil)
+		DispHtml(w, "403", nil)
 	}
 }
 func hdl_7001_download(w http.ResponseWriter, r *http.Request) {
@@ -62,8 +62,8 @@ func hdl_7001_download(w http.ResponseWriter, r *http.Request) {
 		hdl_CORS(w)
 		dwlFile(w, r)
 	case "POST":
-		display(w, "403", nil)
+		DispHtml(w, "403", nil)
 	default:
-		display(w, "403", nil)
+		DispHtml(w, "403", nil)
 	}
 }

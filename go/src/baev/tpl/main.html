@@ -8,17 +8,17 @@
 	<meta name="viewport" content="width=425px, initial-scale=0.75">
 
 	<meta name="author" Content="{{.author}}">
-	<meta name="copyright" Content="Copyright (c) {{.copyright}}">
+	<meta name="copyright" Content="{{.copyright}}">
 	<meta name="title" Content="{{.title}}">
 
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="{{.pfxstdir}}/img/favicon.ico">
 
-	<link href="css/main.css?_v={{.time}}" rel=stylesheet>
+	<link href="{{.pfxstdir}}/css/main.css?_v={{.time}}" rel=stylesheet>
 	{{ if or (eq .ruriGo_1 `dev`) (eq .ruriGo_1 `pfl`) }}
-		<link href="css/style.css?_v={{.time}}" rel=stylesheet>
+		<link href="{{.pfxstdir}}/css/style.css?_v={{.time}}" rel=stylesheet>
 	{{ end }}
 
-	<script src="js/tickers.js" type="text/javascript"></script>
+	<script src="{{.pfxstdir}}/js/tickers.js" type="text/javascript"></script>
 
 </head>
 
@@ -26,10 +26,10 @@
 	
 	{{if eq .ruriGo_1 `dev`}}
 		{{if eq .ruriGo_2 `calculator`}}
-			{{template "dev_calculator_form"}}
+			{{template "dev_calculator_form" .}}
 		{{end}}
 	{{else}}
-		{{template "sendforms_form"}}
+		{{template "sendforms_form" .}}
 	{{end}}
 	
 	<div id="page">
@@ -42,10 +42,10 @@
 		<div>
 			<div id="content"><div class="section">
 				
-				{{if eq .ruriGo_1 `/`}}					{{template "page_main"}} {{end}}
-				{{if eq .ruriGo_1 `privacy_policy`}}	{{template "page_privacy_policy"}} {{end}}
-				{{if eq .ruriGo_1 `dev`}}				{{template "page_dev"}} {{end}}
-				{{if eq .ruriGo_1 `pfl`}}				{{template "page_pfl"}} {{end}}
+				{{if eq .ruriGo_1 `/`}}					{{template "page_main" .}} {{end}}
+				{{if eq .ruriGo_1 `privacy_policy`}}	{{template "page_privacy_policy" .}} {{end}}
+				{{if eq .ruriGo_1 `dev`}}				{{template "page_dev" .}} {{end}}
+				{{if eq .ruriGo_1 `pfl`}}				{{template "page_pfl" .}} {{end}}
 				
 			</div></div>
 		</div>
